@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f6f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1012" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Papel">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <title>Papel — m/R$</title>
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="tabs" role="tablist">
+      <button type="button" data-action="tab" data-tab="sessao" class="active">Sessão</button>
+      <button type="button" data-action="tab" data-tab="historico">Histórico</button>
+      <button type="button" data-action="tab" data-tab="ajustes">Ajustes</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="tab-sessao" class="tab active">
+      <div id="best" class="best-card"></div>
+      <div class="sessao-bar">
+        <span id="sessao-info" class="muted"></span>
+        <button type="button" class="link" data-action="nova-compra">Nova compra</button>
+      </div>
+      <ul id="lista" class="lista"></ul>
+    </section>
+    <section id="tab-historico" class="tab"></section>
+    <section id="tab-ajustes" class="tab"></section>
+  </main>
+
+  <footer id="entrada" class="entrada">
+    <div id="edit-banner" class="edit-banner" hidden>
+      <span>Editando anotação</span>
+      <button type="button" class="link" data-action="cancelar-edicao">Cancelar</button>
+    </div>
+    <div id="produtos-chips" class="chips scroll"></div>
+    <div id="novo" class="novo" hidden>
+      <div class="campo"><span class="rotulo">Marca</span><div id="marca-chips" class="chips scroll"></div></div>
+      <div class="campo"><span class="rotulo">Rolos</span><div id="rolos-chips" class="chips scroll"></div></div>
+      <div class="campo"><span class="rotulo">Metros</span><div id="metros-chips" class="chips scroll"></div></div>
+      <div class="campo"><span class="rotulo">Folha</span><div id="folhas-chips" class="chips scroll"></div></div>
+    </div>
+    <div class="preco-linha">
+      <div class="preco-info">
+        <div id="produto-atual" class="produto-atual"></div>
+        <div id="comparacao" class="comparacao"></div>
+      </div>
+      <div id="preco" class="preco">R$ 0,00</div>
+    </div>
+    <div id="teclado" class="teclado">
+      <button type="button" data-action="key" data-k="1">1</button>
+      <button type="button" data-action="key" data-k="2">2</button>
+      <button type="button" data-action="key" data-k="3">3</button>
+      <button type="button" data-action="key" data-k="4">4</button>
+      <button type="button" data-action="key" data-k="5">5</button>
+      <button type="button" data-action="key" data-k="6">6</button>
+      <button type="button" data-action="key" data-k="7">7</button>
+      <button type="button" data-action="key" data-k="8">8</button>
+      <button type="button" data-action="key" data-k="9">9</button>
+      <button type="button" data-action="key" data-k="back" aria-label="Apagar">⌫</button>
+      <button type="button" data-action="key" data-k="0">0</button>
+      <button type="button" data-action="key" data-k="ok" id="btn-ok" class="ok">Anotar</button>
+    </div>
+  </footer>
+</body>
+</html>
